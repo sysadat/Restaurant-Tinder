@@ -87,6 +87,18 @@ function broadcast(data) {
   });
 }
 
+// Random String Generator, creates a random 21 character string
+function randomStringGenerator() {
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let charactersLength = characters.length;
+  let result = '';
+  for ( let i = 0; i < 21; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result;
+}
+
 //start our server
 server.listen(process.env.PORT, () => {
     console.log(`Server started on port ${server.address().port} :)`);
