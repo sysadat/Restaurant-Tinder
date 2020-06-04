@@ -1,6 +1,14 @@
 // client-side js, loaded by index.html
 // run by the browser each time the page is loaded
 
+// When the user hits the share button,
+document.querySelector('#startNew').addEventListener('click', () => {
+  console.log('LOL');
+  //Want to show the link to display the website once the user clicks the submit button    
+  let link = document.getElementById("link");
+  link.classList.remove("hidden");
+});
+
 const url = "wss://glitch-websocket-chat.glitch.me";
 const connection = new WebSocket(url);
 

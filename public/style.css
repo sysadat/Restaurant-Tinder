@@ -7,6 +7,7 @@
 
 .main {
   display: none;
+  font-family: "Open Sans";
 }
 
 html {
@@ -20,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: sans-serif;
+  font-family: "Open Sans";
   width: 90%;
   height: 99vh;
   /* this is for mobile view */
@@ -58,7 +59,7 @@ img:hover {
 }
 
 #fakeLink {
-  font-family: serif;
+  font-family: "Open Sans";
   font-size: medium;
   color: #003388;
 }
@@ -69,6 +70,10 @@ input {
   margin-bottom: 10px;
   padding: 5px;
   width: 50em;
+}
+
+.hidden {
+  display: none
 }
 
 /* media dependent encoding*/
