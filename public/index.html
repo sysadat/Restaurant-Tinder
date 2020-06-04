@@ -1,0 +1,57 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurant Tinder</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      
+    </header>
+    
+    <div class="tinderBox">
+      <div class="tinderButton" id="leftSwipe">
+        <img id="reject" src="https://cdn.glitch.com/8c0ba45d-6a25-4e4d-8ffc-42e74f897905%2FrejectButton.svg?v=1591134463959" alt="RejectButton">
+      </div>
+      <div id="restaurantInfo">
+        data from yelp API
+      </div>
+      <div class="tinderButton" id="rightSwipe">
+        <img id="heart" src="https://cdn.glitch.com/8c0ba45d-6a25-4e4d-8ffc-42e74f897905%2FheartButton.svg?v=1591134460401" alt="HeartButton"/>
+      </div>
+    </div>
+    
+    
+    
+
+    <footer>
+    
+      <!-- not sure if we'll need any of this so I put it in the footer -->
+    <div class="main">
+      <p>
+        To join this chat, go to 
+        <span id="fakeLink">https://glitch-websocket-chat.glitch.me/client.html</span>,
+        in a new incognito window, or maybe on your phone or another computer.
+      </p>
+      <p>
+        Say something: <input type="text" id="newMsg">
+      </p>
+      <div id="messages"></div>
+      
+    </div></footer>
+
+  </body>
+</html>

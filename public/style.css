@@ -1,0 +1,88 @@
+
+* {
+  box-sizing: border-box;
+  background-color: #ff6b6b;
+  font-size: small;
+}
+
+.main {
+  display: none;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  width: 90%;
+  height: 99vh;
+  /* this is for mobile view */
+}
+
+.tinderBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+img {
+  max-width: 30%;
+  opacity: 1;
+}
+
+img:hover {
+  opacity: .8;
+}
+
+#restaurantInfo {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 30%;
+  min-height: 30vh;
+  border: dotted;
+  justify-content: center;
+}
+
+.tinderButton {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#fakeLink {
+  font-family: serif;
+  font-size: medium;
+  color: #003388;
+}
+
+input {
+  border: 1px solid silver;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 50em;
+}
+
+/* media dependent encoding*/
+
+/* tablet view */
+@media (min-width: 600px && max-width: 770px) {
+  body{
+    width: 70%;
+  }
+}
+
+/* desktop view */
+@media (min-width: 770px) {
+  body {
+    width: 50%;
+  }
+}
