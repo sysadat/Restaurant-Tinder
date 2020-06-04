@@ -1,2 +1,3 @@
-# ECS-162-Final-Project
-Restaurant Tinder
+# ECS 162 - Final Project
+
+## Restaurant Tinder

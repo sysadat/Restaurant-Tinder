@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurant Tinder</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>
+         Restaurant Tinder
+      </h1>
+    </header>
+
+    <main>
+      <p>
+        To host a game, click the "Start New Game" button and share the link with your friends!
+      </p>
+    <!--The stars for our ratings-->
+      <img src="/assets/star-solid.svg" id="solidStar"/>
+      <img src="/assets/star-regular.svg" id="emptyStar"/>
+
+      
+      <!-- Button that pops up the Modal when clicked -->
+      <button class="btn" id="save">Start new game</button>
+  <!--TODO: Need to make make then hidden with CSS, until the player clicks the button then we will make them appear.-->
+
+      <form action="/action_page.php" method="get" style="none">
+        <label for="foodCategory">Choose a food category</label>
+        <input list="categories" name="foodCategory" id="foodCategory">
+        <datalist id="categories">
+          <option value="Asian"></option>
+          <option value="Mexican"></option>
+          <option value="White"></option>
+          <option value="Indian"></option>
+          <option value="Italian"></option>
+        </datalist>
+        <input type="submit">
+      </form>
+      
+      <form action="/action_page.php" method="get" style="none">
+        <label for="location">Choose your location</label>
+        <input list="locations" name="location" id="location">
+        <datalist id="locations">
+          <option value="Davis"></option>
+          <option value="San Francisco"></option>
+          <option value="Los Angeles"></option>
+          <option value="New York"></option>
+          <option value="Saint Denis"></option>
+        </datalist>
+        <input type="submit">
+      </form>
+      
+      <!-- Modal, which is basically the pop-up that shows the link -->
+      <div id="modal" class="modal">
+        <!-- The exit modal button -->
+        <span id="exitModal">&times;</span>
+        <!-- The actual content of the modal -->
+        <div class="modalContent">
+          <!-- The link to the postcard -->
+          <h1>Share your game session:</h1>
+          <!-- Placeholder link and text, will be replaced -->
+          <a href="w3schools.com" id="shareLink">w3schools.com</a>
+        </div>
+      </div>
+      
+    </main>
+    
+  <script src="./script.js"></script>
+  </body>
+</html>
