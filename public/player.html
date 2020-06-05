@@ -1,38 +1,60 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Restaurant Tinder</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      Waiting...
-    </header>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/efdb00de1b.js" crossorigin="anonymous"></script>
 
-    <main>
-      <p>
-        Chat participant.
-      </p>
-      <p>
-        Say something: <input type="text" id="newMsg">
-      </p>
-      <div id="messages"></div>
+  </head>
+
+  <body>
+    
+    <div id="waitingText">
+      <header>
+        Waiting for other players ...
+      </header>
+    </div>
+
+    <main class="restaurantDislay" id="restaurantDislay">
+      <div class="restaurant">
+        
+        <div class= "restaurantImage">
+        </div>
+        
+        <h2 class="restaurantName">
+           Restaurant Name
+        </h2>
+        
+        <p class = "price">
+           $$$
+        </p>
+        
+        <div class="rating">
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        
+        <p class="address">
+          Davis, CA, 95616
+        </p>
+        
+        <img class="heartButton" src="/assets/heartButton.svg">
+        <img class="rejectButton" src="/assets/rejectButton.svg">
+        
+        <a class="reviews" target="_blank" href="#">Reviews</a>
+      </div>
     </main>
 
-    <footer></footer>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-    <script src="./script.js"></script>
+    <script src="./playerScript.js"></script>    
   </body>
 </html>
