@@ -21,11 +21,16 @@
     </header>
 
     <main>
-      <div id="overlay" onclick="off()"></div>
-      <div id="sharelink">
-        <h2>To invite your friends, send them this link:</h2>
-        <p>https://biblical-beasts-tinder.glitch.me/player.html</p>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>To invite your friends, send them this link:</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <a href="https://biblical-beasts-tinder.glitch.me/player.html">https://biblical-beasts-tinder.glitch.me/player.html</a>
+          </div>
+        </div>
       </div>
+
       <div class="interface">
         <p>
           To host a game, click the "Start New Game" button and share the link
@@ -36,13 +41,13 @@
       <img src="/assets/star-regular.svg" id="emptyStar"/> -->
 
         <!-- Button that pops up the Modal when clicked -->
-        <button class="btn" id="startNew" onclick="on()">Start new game</button>
-        <p class="hidden" id="link">
+        <a class="button" id="startNew" href="#popup1">Start new game</a>
+        <!--         <p class="hidden" id="link">
           To invite your friends, send them this link:
           <span id="shareLink"
             >https://biblical-beasts-tinder.glitch.me/player.html</span
           >
-        </p>
+        </p> -->
         <!--TODO: Need to make make then hidden with CSS, until the player clicks the button then we will make them appear.-->
 
         <form action="/action_page.php" method="get" class="hidden">

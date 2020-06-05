@@ -54,14 +54,17 @@ h1 {
   font-weight: 300;
 }
 
-.btn {
+#startNew {
   background-color: white;
   border-radius: 5px;
   padding: 6px;
   margin: 15px;
+  color: black;
+  text-decoration: none;
+  border: 0.3px solid black;
 }
 
-.btn:hover {
+#startNew:hover {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
@@ -126,24 +129,66 @@ input {
   }
 }
 
-#overlay {
+.overlay {
   position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
 }
 
-#sharelink {
-  display: none;
-  background-color: white;
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
   width: 30%;
-  height: 30%;
+  position: relative;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: all .3s ease-in-out;
+  background-color: white;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  background-color: white;
+  font-size: medium;
+}
+.popup .close {
   position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 100ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  background-color: white;
+}
+.popup .close:hover {
+  color: red;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  background-color: white;
+  padding: 5px;
+  padding-left: 0px;
+}
+
+a {
+  background-color: white;
+  text-decoration: none;
+  color: steelblue;
 }
