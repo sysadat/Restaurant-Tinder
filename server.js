@@ -4,6 +4,15 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const assets = require("./assets");
+const yelp = require('yelp-fusion');
+
+
+
+// const client_id = "WRqfH7snIv6eOysP3lAOSg";
+// const api_key = "M8wBkwMZd5PypvgDI7i2UkZoqLRmvf1sV145-Pbf7psMiEuZJS8VN12Rjmgxea8NJCkK4cVcUTWYGQjVu6Avri41NcGjcS8GGCyfdmHR8DTyGbnmNMB9v54eVvvXXnYx";
+// cleaner version
+const apiKey = yelp.client(process.env.YELPAPIKEY);
+const clientID = yelp.client(process.env.CLIENTID);
 
 
 // Gain access to SVGs in the assets
