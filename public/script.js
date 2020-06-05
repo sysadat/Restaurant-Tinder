@@ -56,3 +56,13 @@ setInterval(() => {
   connection.send(msg);
 }, 4000);
 */
+
+function on() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("sharelink").style.display = "none";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("sharelink").style.display = "none";
+}
