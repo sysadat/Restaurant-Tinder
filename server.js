@@ -1,3 +1,4 @@
+'use strict'
 const WebSocket = require('ws');
 const axios = require("axios");
 const express = require("express");
@@ -20,7 +21,7 @@ app.use("/assets", assets);
 
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public")); 
+app.use(express.static("public"));
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
@@ -70,21 +71,21 @@ wss.on('connection', (ws) => {
       {
           voteCount = 0;
           if (restaurantIndex < restaurantList.length - 1)
-            restaurantIndex += 1;  
+            restaurantIndex += 1;
           let nrObj = {'type': 'command', 'info': restaurantList[restaurantIndex]}
-          
+
           broadcast(JSON.stringify(nrObj));
       }
     }
-    
-    
+
+
   })
-  
+
   ws.on('close', ()=>{
     clientCount -= 1;
     console.log("a user disconnected --", clientCount, "users connected");
   });
-  
+
   ws.send('connected!')
 })
 

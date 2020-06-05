@@ -70,6 +70,34 @@ h1 {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+#begin {
+  background-color: white;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 15px;
+  color: black;
+  text-decoration: none;
+  border: 0.3px solid black;
+}
+
+#begin:hover {
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.settings{
+  background-color: white;
+}
+#location{
+  width:400px;
+  background-color: white;
+}
+#category{
+  width:400px;
+  background-color: white;
+}
+
 img {
   max-width: 30%;
   opacity: 1;

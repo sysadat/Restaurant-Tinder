@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/efdb00de1b.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -28,6 +30,32 @@
           <div class="content">
             <a href="https://biblical-beasts-tinder.glitch.me/player.html">https://biblical-beasts-tinder.glitch.me/player.html</a>
           </div>
+          <div class= "settings">
+            
+
+            <label for="location" class="content" >Choose location:</label>
+            <input  name="location"  id="location">
+            <br>
+            <label for="category" class="content" >Choose category:</label>
+            <input list="categories"  name="category" id="category">
+            <br>
+            <datalist id="categories">
+              <option value="Chinese"></option>
+              <option value="Italian"></option>
+              <option value="Indian"></option>
+              <option value="Thai"></option>
+              <option value="Japanese"></option>
+              <option value="Korean"></option>
+              <option value="Filipino"></option>
+              <option value="Mexican"></option>
+              <option value="Pizza"></option>
+              <option value="Burgers"></option>
+              <option value="Vegetarian"></option>
+            </datalist>
+  
+            <a class="button" id="begin">Begin game</a>
+
+          </div>
         </div>
       </div>
 
@@ -36,45 +64,10 @@
           To host a game, click the "Start New Game" button and share the link
           with your friends!
         </p>
-        <!--The stars for our ratings-->
-        <!--       <img src="/assets/star-solid.svg" id="solidStar"/>
-      <img src="/assets/star-regular.svg" id="emptyStar"/> -->
 
         <!-- Button that pops up the Modal when clicked -->
         <a class="button" id="startNew" href="#popup1">Start new game</a>
-        <!--         <p class="hidden" id="link">
-          To invite your friends, send them this link:
-          <span id="shareLink"
-            >https://biblical-beasts-tinder.glitch.me/player.html</span
-          >
-        </p> -->
-        <!--TODO: Need to make make then hidden with CSS, until the player clicks the button then we will make them appear.-->
-
-        <form action="/action_page.php" method="get" class="hidden">
-          <label for="foodCategory">Choose a food category</label>
-          <input list="categories" name="foodCategory" id="foodCategory" />
-          <datalist id="categories">
-            <option value="Asian"></option>
-            <option value="Mexican"></option>
-            <option value="White"></option>
-            <option value="Indian"></option>
-            <option value="Italian"></option>
-          </datalist>
-          <input type="submit" />
-        </form>
-
-        <form action="/action_page.php" method="get" class="hidden">
-          <label for="location">Choose your location</label>
-          <input list="locations" name="location" id="location" />
-          <datalist id="locations">
-            <option value="Davis"></option>
-            <option value="San Francisco"></option>
-            <option value="Los Angeles"></option>
-            <option value="New York"></option>
-            <option value="Saint Denis"></option>
-          </datalist>
-          <input type="submit" />
-        </form>
+        
       </div>
     </main>
 
