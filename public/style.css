@@ -40,10 +40,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-/*   justify-content: center; */
+  /*   justify-content: center; */
   width: 100%;
   min-height: 50%;
-  margin: 20px;
+  /*   margin: 20px; */
 }
 
 .interface {
@@ -59,7 +59,7 @@ h1 {
   font-weight: 300;
 }
 
-#startNew {
+.button {
   background-color: white;
   border-radius: 5px;
   padding: 6px;
@@ -69,30 +69,24 @@ h1 {
   border: 0.3px solid black;
 }
 
-#startNew:hover {
+.button:hover {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 #begin {
-  background-color: white;
-  border-radius: 5px;
-  padding: 6px;
-  margin: 15px;
-  color: black;
-  text-decoration: none;
-  border: 0.3px solid black;
+  margin: 0;
 }
 
-#begin:hover {
-  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+.reviews {
+  margin-top: 60px;
+  padding: 12px;
 }
 
 .settings{
   background-color: white;
+  margin-bottom: 6px;
 }
 #location{
   width:400px;
@@ -116,11 +110,12 @@ img:hover {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  min-width: 50vh;
-  min-height: 30vh;
+  width: 100%;
+/*   min-height: 30vh; */
   border: 1px solid white;
   background-color: white;
   justify-content: center;
+  padding: 5px;
 }
 
 .info {
@@ -132,27 +127,22 @@ img:hover {
   flex-direction: row;
   width: 100%;
   background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .restaurantName {
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   font-weight: bold;
-  font-size: large;
-  background-color: white;
-}
-
-#name {
-  background-color: white;
-}
-
-#price {
+  font-size: x-large;
   background-color: white;
 }
 
 .price {
   display: flex;
   flex-direction: row;
+  flex: 0 0 auto;
   padding-right: 10px;
   align-items: center;
   background-color: white;
@@ -218,6 +208,7 @@ input {
 .popup {
   margin: 70px auto;
   padding: 20px;
+  padding-bottom: 25px;
   background: #fff;
   border-radius: 5px;
   width: 30%;
@@ -257,7 +248,7 @@ input {
   padding-left: 0px;
 }
 
-a {
+#link {
   background-color: white;
   text-decoration: none;
   color: steelblue;
@@ -267,14 +258,35 @@ a {
   padding-top: 5px;
 }
 
-.reviews {
-  padding: 10px;
-  border-radius: 5px;
-  border: 0.5px solid black;
+.restaurant {
+  width: 100%;
 }
 
 .restaurantImage {
   max-width: 100%;
   min-height: 30vh;
   border: 0.5px solid black;
+}
+
+.uselessbuttonholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.tournament {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.line {
+  padding: 0.1px;
+  height: 100%;
+  border: 0.5px solid black;
+}
+
+.heart {
+  padding: 5px;
 }

@@ -24,13 +24,13 @@
       </h1>
     </header>
 
-    <div class="gameSetup">
+    <main class="gameSetup">
       <div id="popup1" class="overlay">
         <div class="popup">
           <h2>To invite your friends, send them this link:</h2>
           <a class="close" href="#">&times;</a>
           <div class="content">
-            <a href="https://biblical-beasts-tinder.glitch.me/player.html"
+            <a id="link" href="https://biblical-beasts-tinder.glitch.me/player.html"
               >https://biblical-beasts-tinder.glitch.me/player.html</a
             >
           </div>
@@ -40,7 +40,7 @@
             <br />
             
             <label for="category" class="content">Choose category:</label>
-            <input list="categories" name="category" id="category" autocomplete="off"/>
+            <input list="categories" name="category" id="category" autocomplete="on"/>
             <br />
             <datalist id="categories">
               <option value="Chinese"></option>
@@ -56,8 +56,10 @@
               <option value="Vegetarian"></option>
             </datalist>
 
-            <!-- <a class="button" id="begin">Get Restaurants</a> -->
           </div>
+        <div class="uselessbuttonholder">
+            <a class="button" id="begin">Get Restaurants</a>
+        </div>
         </div>
       </div>
 
@@ -69,52 +71,6 @@
 
         <!-- Button that pops up the Modal when clicked -->
         <a class="button" id="startNew" href="#popup1">Start new game</a>
-      </div>
-    </div>
-      
-    <div id="waitingText" class="hidden">
-      <h1>
-        Waiting for everyone to join ...
-      </h1>
-    </div>
-    
-    <main class="tinderBox hidden" id="restaurantDisplay">
-      <div class="tinderButton" id="leftSwipe">
-        <img class="rejectButton" src="/assets/rejectButton.svg" />
-      </div>
-      <div class="restaurant">
-        <div class="restaurantImage"></div>
-        <div class="restaurantInfo">
-          <div class="inlineInfo">
-            <div class="restaurantName">
-              <h2 id="name">
-                Restaurant Name
-              </h2>
-            </div>
-            <div class="price">
-              <p id="price">
-                $$$
-              </p>
-            </div>
-          </div>
-
-          <div class="info" id="rating">
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-
-          <p class="info" id="address">
-            Davis, CA, 95616
-          </p>
-
-          <a class="reviews" target="_blank" href="#">Reviews</a>
-        </div>
-      </div>
-      <div class="tinderButton" id="rightSwipe">
-        <img class="heartButton" src="/assets/heartButton.svg" />
       </div>
     </main>
       
