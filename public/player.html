@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Restaurant Tinder</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,52 +9,61 @@
     <link rel="stylesheet" href="/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
-      rel="stylesheet"/>
-    <script src="https://kit.fontawesome.com/efdb00de1b.js" crossorigin="anonymous"></script>
-
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/efdb00de1b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
-    
     <div id="waitingText">
-      <header>
+      <h1>
         Waiting for other players ...
-      </header>
+      </h1>
     </div>
 
-    <main class="restaurantDislay" id="restaurantDislay">
+    <main class="tinderBox" id="restaurantDisplay">
+      <div class="tinderButton" id="leftSwipe">
+        <img class="rejectButton" src="/assets/rejectButton.svg" />
+      </div>
       <div class="restaurant">
-        
-        <div class= "restaurantImage">
+        <div class="restaurantImage"></div>
+        <div class="restaurantInfo">
+          <div class="inlineInfo">
+            <div class="restaurantName">
+              <h2 id="name">
+                Restaurant Name
+              </h2>
+            </div>
+            <div class="price">
+              <p id="price">
+                $$$
+              </p>
+            </div>
+          </div>
+
+          <div class="info" id="rating">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+
+          <p class="info" id="address">
+            Davis, CA, 95616
+          </p>
+
+          <a class="reviews" target="_blank" href="#">Reviews</a>
         </div>
-        
-        <h2 class="restaurantName">
-           Restaurant Name
-        </h2>
-        
-        <p class = "price">
-           $$$
-        </p>
-        
-        <div class="rating">
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-        
-        <p class="address">
-          Davis, CA, 95616
-        </p>
-        
-        <img class="heartButton" src="/assets/heartButton.svg">
-        <img class="rejectButton" src="/assets/rejectButton.svg">
-        
-        <a class="reviews" target="_blank" href="#">Reviews</a>
+      </div>
+      <div class="tinderButton" id="rightSwipe">
+        <img class="heartButton" src="/assets/heartButton.svg" />
       </div>
     </main>
 
-    <script src="./playerScript.js"></script>    
+    <script src="./playerScript.js"></script>
   </body>
 </html>
