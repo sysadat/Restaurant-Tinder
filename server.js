@@ -1,15 +1,15 @@
 'use strict'
 const WebSocket = require('ws');
-const axios = require("axios");
 const express = require("express");
 const app = express();
 const http = require("http");
 const assets = require("./assets");
 const yelp = require('yelp-fusion');
+const bodyParser = require("body-parser");
 
-// const client_id = "WRqfH7snIv6eOysP3lAOSg";
-// const api_key = "M8wBkwMZd5PypvgDI7i2UkZoqLRmvf1sV145-Pbf7psMiEuZJS8VN12Rjmgxea8NJCkK4cVcUTWYGQjVu6Avri41NcGjcS8GGCyfdmHR8DTyGbnmNMB9v54eVvvXXnYx";
-// cleaner version
+const axios = require("axios");
+
+
 const apiKey = yelp.client(process.env.YELPAPIKEY);
 const clientID = yelp.client(process.env.CLIENTID);
 
@@ -21,36 +21,40 @@ app.use("/assets", assets);
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
+app.use(bodyParser.json());
+
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/public/host.html");
 });
 
 const server = http.createServer(app);
-
 const wss = new WebSocket.Server({server});
 
 
 // REST
-let yelpREST = axios.create({
-  baseURL: "https://api.yelp.com/v3/",
-  headers: {
-    Authorization: `Bearer ${process.env.API_KEY}`,
-    "Content-type": "application/json",
-  },
-})
+// let yelpREST = axios.create({
+//   baseURL: "https://api.yelp.com/v3/",
+//   headers: {
+//     Authorization: `Bearer ${process.env.API_KEY}`,
+//     "Content-type": "application/json",
+//   },
+// })
 
 
 const restaurantList = [["AAA", "BBB"], ["CCC", "DDD"], ["EEE", "FFF"], ["GGG", "HHH"]];
-let clientCount = 0;
-let voteCount = 0;
+
 let restaurantIndex = 0;
 
-yelpREST('/businesses/search', { params: { 'location': 'Davis', 'categories':  "chinese", 'limit': 16 } }).then(({ data }) => {
-    data.businesses.forEach((item)=>{
-      console.log(item);
-    })
-})
+// yelpREST('/businesses/search', { params: { 'location': 'Davis', 'categories':  "chinese", 'limit': 16 } }).then(({ data }) => {
+//     data.businesses.forEach((item)=>{
+//       console.log(item);
+//     })
+// })
+
+
+let clientCount = 0;
+let voteCount = 0;
 
 wss.on('connection', (ws) => {
   clientCount += 1;
