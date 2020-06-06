@@ -1,7 +1,7 @@
 
 * {
   box-sizing: border-box;
-  background-color: #ff6b6b;
+/*   background-color: #ff6b6b; */
   font-size: medium;
   font-family: "Open Sans";
   font-weight: 300;
@@ -32,13 +32,18 @@ body {
   font-family: "Open Sans";
   width: 90%;
   height: 99vh;
+  background-color: #ff6b6b;
   /* this is for mobile view */
 }
 
 .tinderBox {
   display: flex;
   flex-direction: row;
+  align-items: center;
+/*   justify-content: center; */
   width: 100%;
+  min-height: 50%;
+  margin: 20px;
 }
 
 .interface {
@@ -107,13 +112,50 @@ img:hover {
   opacity: .8;
 }
 
-#restaurantInfo {
+.restaurantInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-width: 50vh;
+  min-height: 30vh;
+  border: 1px solid white;
+  background-color: white;
+  justify-content: center;
+}
+
+.info {
+  background-color: white;
+}
+
+.inlineInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+}
+
+.restaurantName {
   display: flex;
   flex: 0 0 auto;
-  min-width: 30%;
-  min-height: 30vh;
-  border: dotted;
-  justify-content: center;
+  font-weight: bold;
+  font-size: large;
+  background-color: white;
+}
+
+#name {
+  background-color: white;
+}
+
+#price {
+  background-color: white;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  padding-right: 10px;
+  align-items: center;
+  background-color: white;
 }
 
 .tinderButton {
@@ -219,4 +261,20 @@ a {
   background-color: white;
   text-decoration: none;
   color: steelblue;
+}
+
+.settings {
+  padding-top: 5px;
+}
+
+.reviews {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+
+.restaurantImage {
+  max-width: 100%;
+  min-height: 30vh;
+  border: 0.5px solid black;
 }
