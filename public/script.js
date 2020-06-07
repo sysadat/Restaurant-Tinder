@@ -13,8 +13,9 @@ document.querySelector('#startNew').addEventListener('click', () => {
 document.querySelector('#begin').addEventListener('click', () => {
   console.log('game start');
   sendNewMsg();
-  document.location.href =
-      "https://biblical-beasts-tinder.glitch.me/player.html";
+  document.getElementById("invite").textContent="Please exit this tab now! Enjoy the game!";
+  //document.location.href =
+   //   "https://biblical-beasts-tinder.glitch.me/player.html";
   
 });
 
