@@ -175,7 +175,7 @@ wss.on('connection', (ws) => {
 
   ws.on('close', ()=>{
     totalVoteCounter[clientCount] -= 1;
-    console.log("One user disconnected: ", clientCount, "total user(s) connected");
+    console.log("One user disconnected: ", totalVoteCounter[clientCount], "total user(s) connected");
   });
 
   ws.send('Connected!')
