@@ -9,21 +9,31 @@ document.querySelector('#startNew').addEventListener('click', () => {
   link.classList.remove("hidden");
 });
 
-const url = "wss://glitch-websocket-chat.glitch.me";
+//when the host presses get resturants we begin
+document.querySelector('#begin').addEventListener('click', () => {
+  console.log('game start');
+  sendNewMsg();
+  document.location.href =
+      "https://biblical-beasts-tinder.glitch.me/player.html";
+  
+});
+
+const url = "wss://biblical-beasts-tinder.glitch.me";
 const connection = new WebSocket(url);
 
-let e = document.getElementById("newMsg");
-e.addEventListener("change", sendNewMsg);
+//let e = document.getElementById("newMsg");
+//e.addEventListener("change", sendNewMsg);
 
 function sendNewMsg() {
-  let e = document.getElementById("newMsg");
+  let e = document.getElementById("category");
+  let f = document.getElementById("location");
   let msgObj = {
     "type": "message",
     "from": "host",
-    "msg": e.value
+    "msg": [e.value,f.value]
   }
   connection.send(JSON.stringify(msgObj));
-  e.value = null;
+  // e.value = null;
 }
 
 let addMessage = function(message) {
