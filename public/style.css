@@ -80,6 +80,10 @@ h1 {
 }
 
 .reviews {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin-top: 60px;
   padding: 12px;
 }
@@ -89,11 +93,11 @@ h1 {
   margin-bottom: 6px;
 }
 #location{
-  width:400px;
+  width:200px;
   background-color: white;
 }
 #category{
-  width:400px;
+  width:200px;
   background-color: white;
 }
 
@@ -207,7 +211,7 @@ input {
 
 .popup {
   margin: 70px auto;
-  padding: 20px;
+  padding: 40px;
   padding-bottom: 25px;
   background: #fff;
   border-radius: 5px;
@@ -254,6 +258,12 @@ input {
   color: steelblue;
 }
 
+#progress{
+  font-size: 30px;
+  font-weight: bold;
+  padding:30px;
+}
+
 .settings {
   padding-top: 5px;
 }
@@ -289,4 +299,6 @@ input {
 
 .heart {
   padding: 5px;
+  color: red;
+  font-size: 30px;
 }

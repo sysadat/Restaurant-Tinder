@@ -7,9 +7,6 @@ const assets = require("./assets");
 const yelp = require('yelp-fusion');
 const bodyParser = require("body-parser");
 
-const axios = require("axios");
-
-
 const apiKey = yelp.client(process.env.YELPAPIKEY);
 const clientID = yelp.client(process.env.CLIENTID);
 

@@ -18,20 +18,24 @@
   </head>
 
   <body>
-    <div id="waitingText">
-      <h1>
+    <div id="roundNumber" class="hidden">
+        Round 1
+    </div>
+    
+    <div id="progress">
+      
         Waiting for other players ...
-      </h1>
+      
     </div>
 
-    <div class="tournament">
+    <div class="tournament hidden" id="tournament">
       <!--  second restaurant  -->
       <div class="tinderBox" id="restaurantDisplay">
         <!-- <div class="tinderButton" id="leftSwipe">
         <img class="rejectButton" src="/assets/rejectButton.svg" />
       </div> -->
         <div class="restaurant">
-          <div class="restaurantImage"></div>
+          <div class="restaurantImage" id="Image"></div>
           <div class="restaurantInfo">
             <div class="inlineInfo">
               <div class="restaurantName">
@@ -59,8 +63,8 @@
             </p>
             
             <div class="reviews">
-              <a class="button" id="reviews" target="_blank" href="#">Reviews</a>    
-              <div class="heart">
+              <!--a class="button" id="reviews" target="_blank" href="#">Reviews</a-->    
+              <div class="heart" id="heart">
                 <i class="far fa-heart"></i>
               </div>
             </div>
@@ -75,8 +79,8 @@
       
       <!--  second restaurant  -->
       <div class="tinderBox" id="restaurantDisplay2">
-        <div class="restaurant">
-          <div class="restaurantImage"></div>
+        <div class="restaurant" >
+          <div class="restaurantImage" id="Image2"></div>
           <div class="restaurantInfo">
             <div class="inlineInfo">
               <div class="restaurantName">
@@ -104,8 +108,8 @@
             </p>
             
             <div class="reviews">
-              <a class="button" id="reviews2" target="_blank" href="#">Reviews</a>      
-              <div class="heart">
+              <!--a class="button" id="reviews2" target="_blank" href="#">Reviews</a-->      
+              <div class="heart" id="heart2">
                 <i class="far fa-heart"></i>
               </div>
             </div>
