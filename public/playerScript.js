@@ -12,8 +12,8 @@ let name1 = document.getElementById("name"); //name of left resturant
 let name2 = document.getElementById("name2"); //name of right resturant
 let price1 = document.getElementById("price"); //price of left resturant
 let price2 = document.getElementById("price2"); //price of right resturant
-let image1 = document.getElementById("image"); //image of left resturant
-let image2 = document.getElementById("image2"); //image of right resturant
+let image1 = document.getElementById("Image"); //image of left resturant
+let image2 = document.getElementById("Image2"); //image of right resturant
 let rating1 = document.getElementById("rating"); //rating of left resturant
 let rating2 = document.getElementById("rating2"); //rating of right resturant
 let address1 = document.getElementById("address"); //address of left resturant
@@ -84,7 +84,7 @@ connection.onmessage = event => {
     gameboard.classList.remove("hidden");
     let leftInfo = JSON.parse(msgObj.info[0]);
     let rightInfo = JSON.parse(msgObj.info[1]);
-    
+    updateDisplay(leftInfo, rightInfo);
   } else {
       addMessage(msgObj.type);
   }
