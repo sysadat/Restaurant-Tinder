@@ -94,12 +94,14 @@ wss.on('connection', (ws) => {
         // If its a tie
         } else {
           // If this is the first tie
+          // NEED TO WORK ON THIS RIGHT HERE 
+          //check if previous tied is 1. if so, we just had a tie and so we need to redo the round with same two
           if (!previousTied) {
             previousTied = 1;
             winningIndex = -1;
             losingIndex = -1;
-          // If we already have a tie, then randomly select a winner
-            // NEED TO WORK ON THIS RIGHT HERE 
+            
+          // If we already have a tie, then randomly select a winner 
           } else if (previousTied) {
             //If this is the second tie, randomly select a winner, and reset the number of rounds tied.
             previousTied = 0;
@@ -124,7 +126,6 @@ wss.on('connection', (ws) => {
         leftRightVotes[leftVotes] = 0;
         leftRightVotes[rightVotes] = 0;
 
-        // Below here to the next comment, is this all
         //If there was a winner, delete the loser
         if (losingIndex > -1) {
           console.log("No tie");
@@ -133,18 +134,22 @@ wss.on('connection', (ws) => {
         } else if (losingIndex < 0) {
           console.log("tie");
         }
-
-        // we sure this is all we need here ^
-
         let restaurantLength = restaurantList.length;
         console.log("restaurantLength: " + restaurantLength);
-        //Broadcast winner if only one resturant left
+        //Declare winner if only one resturant left
         if (restaurantLength == 1) {
           broadcast(JSON.stringify({type: "winner", winner: restaurantList[0]}));
           //Otherwise, select the pair for the next round
         } else {
-          //the code we need to kick off the next round
+          // code we need to kick off the next round
           currentRound++;
+          // If we have a tie, send the same restaurants back            
+          if (previousTied) {
+              console.log("Sending the same restaurants back");
+              broadcast(JSON.stringify({ type: "command",
+              info: [restaurantList[currentRestaurants[currentLeft]], restaurantList[currentRestaurants[currentRight]]],
+              round: currentRound}));
+          }
           let randomNumberPair = generateRandomNumbers(restaurantLength);
           console.log('randomNumberPair: ', randomNumberPair);
           currentRestaurants[currentLeft] = randomNumberPair[0];

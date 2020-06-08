@@ -16,27 +16,9 @@ let rating1 = document.getElementById("rating"); //rating of left resturant
 let rating2 = document.getElementById("rating2"); //rating of right resturant
 let address1 = document.getElementById("address"); //address of left resturant
 let address2 = document.getElementById("address2"); //address of right resturant
-let heart1 = document.getElementById("heart");
-let heart2 = document.getElementById("heart2");
-let roundNumber = document.getElementById("roundNumber"); // Keep track of the current round 
-
-heart1.addEventListener("click", () => {
-  progressBar.textContent = "Waiting...";
-  let cmdObj = {
-    "type": "command",
-    "selection": 0
-  }
-  connection.send(JSON.stringify(cmdObj));
-});
-
-heart2.addEventListener("click", () => {
-  progressBar.textContent = "Waiting...";
-  let cmdObj = {
-    "type": "command",
-    "selection": 1
-  }
-  connection.send(JSON.stringify(cmdObj));
-});
+let heart1 = document.getElementById("heart"); //the heart/like button
+let heart2 = document.getElementById("heart2"); //the heart/like button
+let roundNumber = document.getElementById("roundNumber"); // Keep track and update the current round 
 
 
 function sendNewMsg() {
@@ -82,7 +64,7 @@ connection.onmessage = event => {
   }
   else if (msgObj.type == "command") {
     progressBar.textContent = "Please vote ..."
-    roundNumber.textContent = "Round: ", msgObj.round;
+    roundNumber.textContent = "Round: "+ msgObj.round;
     roundNumber.classList.remove("hidden");
     gameboard.classList.remove("hidden");
     updateDisplay(JSON.parse(msgObj.info[0]), JSON.parse(msgObj.info[1]));
@@ -90,6 +72,24 @@ connection.onmessage = event => {
       addMessage(msgObj.type);
   }
 };
+
+heart1.addEventListener("click", () => {
+  progressBar.textContent = "Waiting...";
+  let cmdObj = {
+    "type": "command",
+    "selection": 0
+  }
+  connection.send(JSON.stringify(cmdObj));
+});
+
+heart2.addEventListener("click", () => {
+  progressBar.textContent = "Waiting...";
+  let cmdObj = {
+    "type": "command",
+    "selection": 1
+  }
+  connection.send(JSON.stringify(cmdObj));
+});
 
 function updateDisplay(leftYelp, rightYelp) {
     name1.innerHTML= leftYelp.name;
@@ -114,10 +114,7 @@ function updateDisplay(leftYelp, rightYelp) {
     }
     address1.textContent= leftYelp.location.address1+", "+leftYelp.location.city+", "+leftYelp.location.state+" "+leftYelp.location.zip_code;
     address2.textContent= rightYelp.location.address1+", "+rightYelp.location.city+", "+rightYelp.location.state+" "+rightYelp.location.zip_code;
+
+  
 }
 
-function switch1() {
-  document.getElementsById("heart1").addClass("hiddenHeart");
-  document.getElementsById("heart2").addClass("heart");
-  document.getElementsById("heart2").removeClass("hiddenHeart"); 
-}
