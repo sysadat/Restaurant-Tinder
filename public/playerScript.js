@@ -4,8 +4,6 @@
 const url = "wss://biblical-beasts-tinder.glitch.me";
 const connection = new WebSocket(url);
 
-let heart1 = document.getElementById("heart");
-let heart2 = document.getElementById("heart2");
 let progressBar = document.getElementById("progress"); // THE BAR THAT SAYS WAITING....
 let gameboard = document.getElementById("tournament"); //DISPLAYS FOR BOTH RESTURANTS
 let name1 = document.getElementById("name"); //name of left resturant
@@ -18,6 +16,8 @@ let rating1 = document.getElementById("rating"); //rating of left resturant
 let rating2 = document.getElementById("rating2"); //rating of right resturant
 let address1 = document.getElementById("address"); //address of left resturant
 let address2 = document.getElementById("address2"); //address of right resturant
+let heart1 = document.getElementById("heart");
+let heart2 = document.getElementById("heart2");
 let roundNumber = document.getElementById("roundNumber"); // Keep track of the current round 
 
 heart1.addEventListener("click", () => {
@@ -72,19 +72,20 @@ connection.onmessage = event => {
   if (msgObj.type == "message") {
     addMessage(msgObj.from+": "+msgObj.msg);
   } 
-  else if (msgObj.type == 'winner') {
+  else if (msgObj.type == "winner") {
     progressBar.textContent = "Winner!";
     let winnerInfo = JSON.parse(msgObj.winner);
     updateDisplay(winnerInfo,winnerInfo);
+  }
+  else if (msgObj.type == "fail") {
+    progressBar.textContent = "NO RESTAURANTS FOUND, PLEASE CLOSE ALL TABS AND START OVER!";
   }
   else if (msgObj.type == "command") {
     progressBar.textContent = "Please vote ..."
     roundNumber.textContent = "Round: ", msgObj.round;
     roundNumber.classList.remove("hidden");
     gameboard.classList.remove("hidden");
-    let leftInfo = JSON.parse(msgObj.info[0]);
-    let rightInfo = JSON.parse(msgObj.info[1]);
-    updateDisplay(leftInfo, rightInfo);
+    updateDisplay(JSON.parse(msgObj.info[0]), JSON.parse(msgObj.info[1]));
   } else {
       addMessage(msgObj.type);
   }
@@ -111,6 +112,12 @@ function updateDisplay(leftYelp, rightYelp) {
         rightStars[i].className = "far fa-star";
       }
     }
-    address1.innerHTML= leftYelp.display_address;
-    address2.innerHTML= rightYelp.display_address;
+    address1.textContent= leftYelp.location.address1+", "+leftYelp.location.city+", "+leftYelp.location.state+" "+leftYelp.location.zip_code;
+    address2.textContent= rightYelp.location.address1+", "+rightYelp.location.city+", "+rightYelp.location.state+" "+rightYelp.location.zip_code;
+}
+
+function switch1() {
+  document.getElementsById("heart1").addClass("hiddenHeart");
+  document.getElementsById("heart2").addClass("heart");
+  document.getElementsById("heart2").removeClass("hiddenHeart"); 
 }
