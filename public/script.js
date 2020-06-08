@@ -12,8 +12,8 @@ document.querySelector('#startNew').addEventListener('click', () => {
 //when the host presses get resturants we begin
 document.querySelector('#begin').addEventListener('click', () => {
   console.log('game start');
-  sendNewMsg();
-  document.getElementById("invite").textContent="Please exit this tab now! Enjoy the game!";
+  sendNewMsg(); //sends a message to server with category and location
+  document.getElementById("invite").textContent="The game has begun. Please exit this tab now! Enjoy the game!";
   //document.location.href =
    //   "https://biblical-beasts-tinder.glitch.me/player.html";
   
@@ -67,4 +67,3 @@ setInterval(() => {
   connection.send(msg);
 }, 4000);
 */
-

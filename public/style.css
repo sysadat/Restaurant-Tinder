@@ -55,7 +55,7 @@ body {
 
 h1 {
   padding: 25px;
-  font-size: x-large;
+  font-size: 40px;
   font-weight: 300;
 }
 
@@ -215,7 +215,7 @@ input {
   padding-bottom: 25px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
+  width: 40%;
   position: relative;
   top: 40%;
   -ms-transform: translateY(-50%);
@@ -275,7 +275,7 @@ input {
 .restaurantImage {
   max-width: 100%;
   min-height: 30vh;
-  border: 0.5px solid black;
+  border: .1px dashed black;
 }
 
 .uselessbuttonholder {
@@ -300,5 +300,25 @@ input {
 .heart {
   padding: 5px;
   color: red;
-  font-size: 30px;
+  font-size: 50px;
+  border-radius: 15px;
+}
+
+.heart:hover {
+  color: maroon;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.hiddenHeart {
+  display: none;
+}
+
+#address {
+  padding-top: 17px;
+}
+
+#address2 {
+  padding-top: 17px;
 }
