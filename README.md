@@ -1,5 +1,7 @@
 # ECS 162 - Final Project - Restaurant Tinder
 
+Created by Ranjan Sikand, Sayed Yoseph Sadat, and Muhammed Halbutogullari
+
 ## Issues
 
 ### There are some bugs:
