@@ -4,7 +4,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "websocket": "^1.0.31",
     "ws": "^7.3.0",
         "yelp-fusion": "^3.0.0",
